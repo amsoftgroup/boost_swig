@@ -23,6 +23,8 @@ namespace singularity{
 		std::string get_port();
 		void write_settings();
 		void write_settings(const std::string& logger_app_id, const std::string& logger_fqdn, const std::string& logger_port, const std::string& logger_api);
+	
+	protected:
 
 	private:
 
