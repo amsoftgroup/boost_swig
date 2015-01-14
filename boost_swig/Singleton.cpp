@@ -11,8 +11,6 @@ Singleton::Singleton(){}
 {
 	Singleton * tmp = instance_.load(boost::memory_order_consume);
 	if (!tmp) {
-		std::cout << "!TMP: " << "\n";
-
 		boost::mutex::scoped_lock guard(instantiation_mutex);
 		tmp = instance_.load(boost::memory_order_consume);
 		if (!tmp) {
@@ -20,7 +18,6 @@ Singleton::Singleton(){}
 			instance_.store(tmp, boost::memory_order_release);
 		}
 	}
-	std::cout << "TMP: " << "\n";
 	return tmp;
 }
 
